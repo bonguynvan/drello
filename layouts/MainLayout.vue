@@ -64,29 +64,57 @@ defineShortcuts({
 
 <template>
     <div id="MainLayout" class="w-full fixed z-50">
-        <div id="TopMenu" class="w-full bg-[#210c4d] border-b md:block hidden">
+        <div id="TopMenu" class="w-full bg-[#210c4d] md:block hidden">
             <div class="flex justify-between">
-                <ul class="flex items-center justify-start text-sm text-[#333] px-2 h-12 bg-[#210c4d] w-1.2">
+                <ul class="flex items-center justify-start text-md text-[#f2f2f2] px-2 h-12 bg-[#210c4d] w-1.2">
                     <li
                         class="
                             relative
                             flex
                             items-center
                             px-2.5
-                            hover:text-[#5689ff]
-                            h-full
+                            h-10
                             cursor-pointer
+                            hover:bg-[#d4cdf842] 
+                            rounded-md
                         "
                     >
-                    <UDropdown v-model:open="open" :items="items" :popper="{ placement: 'bottom-start' }">
+                    <UDropdown v-model:open="open" :items="items" :popper="{ placement: 'bottom-start', offsetDistance: 0 }">
                         <Icon name="ic:baseline-apps" size="28"/>
                     </UDropdown>
                         <!-- <Icon name="ic:baseline-apps" size="28"/> -->
                     </li>
-                    <li class="relative flex items-center px-2.5 h-12">
+                    <li class="relative flex items-center justify-center px-2.5 h-10 hover:bg-[#d4cdf842] rounded-md">
                         <NuxtLink to="/">
-                            <img src="/logo.png" alt="" class="h-10 object-contain">
+                            <img src="/logo.png" alt="" class="h-8">
                         </NuxtLink>
+                    </li>
+                    <li class="relative flex items-center px-2.5 h-10 hover:bg-[#d4cdf842] rounded-md">
+                        <UDropdown v-model:open="open" :items="items" :popper="{ placement: 'bottom-start' }">
+                            Workspaces
+                            <Icon name="mdi-light:chevron-down" size="26"/>
+                        </UDropdown>
+                    </li>
+                    <li class="relative flex items-center px-2.5 h-10 hover:bg-[#d4cdf842] rounded-md">
+                        <UDropdown v-model:open="open" :items="items" :popper="{ placement: 'bottom-start' }">
+                            Recent
+                            <Icon name="mdi-light:chevron-down" size="26"/>
+                        </UDropdown>
+                    </li>
+                    <li class="relative flex items-center px-2.5 h-10 hover:bg-[#d4cdf842] rounded-md">
+                        <UDropdown v-model:open="open" :items="items" :popper="{ placement: 'bottom-start' }">
+                            Starred
+                            <Icon name="mdi-light:chevron-down" size="26"/>
+                        </UDropdown>
+                    </li>
+                    <li class="relative flex items-center px-2.5 h-10 hover:bg-[#d4cdf842] rounded-md">
+                        <UDropdown v-model:open="open" :items="items" :popper="{ placement: 'bottom-start' }">
+                            Templates
+                            <Icon name="mdi-light:chevron-down" size="26"/>
+                        </UDropdown>
+                    </li>
+                    <li class="relative flex items-center px-2.5 h-10">
+                        <UButton>Create</UButton>
                     </li>
                 </ul>
             </div>
